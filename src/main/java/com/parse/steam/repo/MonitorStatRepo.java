@@ -1,4 +1,4 @@
-package com.parse.steam.repo.parsed;
+package com.parse.steam.repo;
 
 import com.parse.steam.entities.MonitorStatEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

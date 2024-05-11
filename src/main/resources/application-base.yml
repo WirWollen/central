@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8082
   servlet:
     #    context-path: /api/ws
     session:
@@ -11,6 +11,21 @@ springdoc:
     path: /swagger-ui.html
 dev-auth: true
 spring:
+  kafka:
+    consumer:
+      topic: parsed-monitor
+      topic-list: list
+      bootstrap-servers: localhost:9092
+      group-id: app.1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      topic: parsed-monitor
+      topic-list: list
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   freemarker:
     expose-request-attributes: true
   datasource:
@@ -35,4 +50,4 @@ parse:
   page-size: 100
 data:
   page-size: 100
-market: kuygyiuuoih
+
